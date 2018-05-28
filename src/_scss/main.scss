@@ -1,10 +1,124 @@
-$orange: #f98a09;
+$white: #fff;
+$grey--light: #f4f5f6;
+$dark: #34314C;
+$primary: #350E75;
+$primary--light: #762BEE;
+$secondary: #FFC952;
+$terciary: #FF7473;
+$link: #47B8E0;
+$success: #A5D296;
+.mb-col {
+    margin-bottom: 45px;
+}
+.main-header {
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
 
-.main {
-    background-color: $orange;
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.nav {
+    height: 100px;
+    background-color: $white;
+
+    &__link {
+        color: $dark;
+        position: relative;
+        transform: translate(0);
+        font-size: 1.125em;
+
+        &:hover, &:active, &:focus {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            z-index: -1;
+            height: 6px;
+            left: -5px;
+            right: -5px;
+            background-color: transparent;
+            transform: skew(-15deg);
+        }
+
+        &:hover:after,
+        &--active:after {
+            background-color: $secondary;
+        }
+    }
+}
+
+.hero {
+    min-height: 520px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background-color: $grey--light;
+
+    &__content-title {
+        color: $primary;
+        font-size: 3em;
+        font-weight: 800;
+    }
+
+    &__content-description {
+        text-align: center;
+        color: $primary--light;
+        font-size: 1.375em;
+    }
+}
+
+.posts {
+    padding-top: 5em;
+    padding-bottom: 5em;
+
+    &__header {
+        margin-bottom: 1.5em;
+    }
+
+    &__header > h3 {
+        position: relative;
+        font-size: 2em;
+        margin-bottom: 3em;
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            z-index: -1;
+            height: 6px;
+            left: -5px;
+            right: -5px;
+            background-color: $secondary;
+            transform: skew(-15deg);
+        }
+    }
+}
+
+.post {
+    position: relative;
+    padding: 2em 1.5em 1.5em;
+    border: 2px solid $primary;
+    border-radius: 0.25em;
+    &__categories {
+        background-color: $secondary;
+        padding: 0.625em;
+        display: inline-block;
+        position: absolute;
+        top: -25px;
+        margin-bottom: 20px;
+        > span {
+            font-size: 14px;
+        }
+    }
+    &__title {
+        line-height: 1.125em;
+    }
+
+    &__description {
+        margin: 0;
+    }
 }
