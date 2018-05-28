@@ -103,12 +103,19 @@ body {
     padding: 2em 1.5em 1.5em;
     border: 2px solid $primary;
     border-radius: 0.25em;
+    cursor: pointer;
+    transition: .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    &:hover {
+        transform: translateY(-7.5px);
+    }
+    &:hover &__title { color: $primary; }
+
     &__categories {
         background-color: $secondary;
-        padding: 0.625em;
+        padding: 5px;
         display: inline-block;
         position: absolute;
-        top: -25px;
+        top: -20px;
         margin-bottom: 20px;
         > span {
             font-size: 14px;
